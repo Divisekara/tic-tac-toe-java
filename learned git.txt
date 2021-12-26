@@ -1,0 +1,15 @@
+when you create a new repositary in local computer.
+
+1. create a folder for your repositary and name it as the repositary name
+2. go to github.com and create a new repositary and copy the url of the repositary
+3. then open terminal inside the local repo folder. 
+    a) command - git init
+    b) command - git remote add origin <URL>
+    c) command - git pull origin <branch name> // most of the times the branch name is main.
+4. Now you can start working on the local repositary
+5. when you do a significant change and needs to push to the remote then use the following commands.
+    a) command - git status // looking at the current status of the local repositary
+    b) command - git add . // adding all the files to the staging area
+    c) command - git commit -m "<message describing the commit>"
+    d) command - git push -u origin <branch name> // most of the times the branch name is main
+6. Heres how you can work on local repositary updating the remote origin. 
