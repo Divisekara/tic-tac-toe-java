@@ -17,4 +17,12 @@ when you create a new repositary in local computer.
 
 Here are some another important information on git
 
-when you 
+Learn more about main and master on github and how to work with local repo using this stackoverflow thread
+https://stackoverflow.com/questions/64249491/difference-between-main-branch-and-master-branch-in-github
+
+when you start working on local repo for first time you will start with master branch where you have to merge the pull requests from github.com when you push commits from local repo as master.
+So you can change the branch to main using the following command
+    command - git branch -m master main // this command does something similar to renaming the master to main
+after executing the above command we can use the following command for push to the remote origin
+    command - git push -u origin main
+    
