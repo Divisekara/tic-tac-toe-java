@@ -13,3 +13,8 @@ when you create a new repositary in local computer.
     c) command - git commit -m "<message describing the commit>"
     d) command - git push -u origin <branch name> // most of the times the branch name is main
 6. Heres how you can work on local repositary updating the remote origin. 
+
+
+Here are some another important information on git
+
+when you 
