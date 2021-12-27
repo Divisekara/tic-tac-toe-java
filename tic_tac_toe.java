@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class tic_tac_toe {
 
@@ -81,14 +82,42 @@ public class tic_tac_toe {
             boardNumbers[row][column] = String.valueOf(board[row][column]);
         }
 
-        for (int k = 0; k < 3; k++) {
-            String[] pattern = new String[3];
+        String status; // use to check the status of the winning and drawing
+        String[] pattern = new String[3];
 
-            pattern = boardNumbers[0];
-            pattern = boardNumbers[1];
-            pattern = boardNumbers[2];
+        for (int k = 0; k < 3; k++) {
+            pattern = boardNumbers[k];
+            String winStatus = checkPattern(pattern);
+
+            if (winStatus == "X") {
+                status = "User A won the match";
+                break;
+            } else if (winStatus == "O") {
+                status = "User B won the match";
+                break;
+            }
+
+            for (int j = 0; j < 3; j++) {
+                pattern[j] = boardNumbers[j][k];
+            }
+
+            winStatus = checkPattern(pattern);
+
+            if (winStatus == "X") {
+                status = "User A won the match";
+                break;
+            } else if (winStatus == "O") {
+                status = "User B won the match";
+                break;
+            }
 
         }
+
+        String diagonal_1_1 = boardNumbers[0][0];
+        String diagonal_1_2 = boardNumbers[1][1];
+        String diagonal_1_3 = boardNumbers[2][2];
+
+        pattern = new String[] { diagonal_1_1, diagonal_1_2, diagonal_1_3 };
 
     }
 
@@ -112,5 +141,13 @@ public class tic_tac_toe {
             return "play";
         }
 
+    }
+
+    public static void printWinner(String winStatus) {
+        if (winStatus == "X") {
+            System.out.println("User A won the match");
+        } else if (winStatus == "O") {
+            System.out.println("User B won the match");
+        }
     }
 }
