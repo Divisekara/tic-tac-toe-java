@@ -17,38 +17,44 @@ public class tic_tac_toe {
         gameIntro();
 
         Scanner scanner = new Scanner(System.in);
-        found: {
-            for (int i = 0; i < 9; i++) {
-                System.out.println("Here is the current board - ");
+        int win_or_draw = 0;
+
+        for (int i = 0; i < 9; i++) {
+            System.out.println("Here is the current board - ");
+            printBoard(board);
+            int user;
+
+            if (i % 2 == 0) {
+                user = 1;
+                System.out.println("-------User One-----");
+            } else {
+                user = 2;
+                System.out.println("-------User Two-----");
+            }
+
+            System.out.println("Enter a number between 1-9 not already occupied - ");
+            String userInput = scanner.nextLine();
+            board = updateBoard(board, user, userInput);
+            String status = winner(board);
+
+            // System.out.println(status);
+
+            if (status == "X") {
+                System.out.println("Winner is the X");
                 printBoard(board);
-                int user;
-
-                if (i % 2 == 0) {
-                    user = 1;
-                    System.out.println("-------User One-----");
-                } else {
-                    user = 2;
-                    System.out.println("-------User Two-----");
-                }
-
-                System.out.println("Enter a number between 1-9 not already occupied - ");
-                String userInput = scanner.nextLine();
-                board = updateBoard(board, user, userInput);
-                String status = winner(board);
-
-                // System.out.println(status);
-
-                if (status == "X") {
-                    System.out.println("Winner is the X");
-                    break;
-                } else if (status == "O") {
-                    System.out.println("Winner is the O");
-                    break;
-                }
+                win_or_draw = 1;
+                break;
+            } else if (status == "O") {
+                System.out.println("Winner is the O");
+                printBoard(board);
+                win_or_draw = 1;
+                break;
             }
         }
+        if (win_or_draw == 0) {
+            System.out.println("Match is draw");
+        }
 
-        System.out.println("Match is draw");
     }
 
     public static void gameIntro() {
