@@ -25,4 +25,21 @@ So you can change the branch to main using the following command
     command - git branch -m master main // this command does something similar to renaming the master to main
 after executing the above command we can use the following command for push to the remote origin
     command - git push -u origin main
-    
+
+
+I got this following error 
+"""
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Divisekara/tic-tac-toe-java.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\Asitha\Desktop\JAVA\tic-tac-toe-java> git push -f origin FixForBug
+error: src refspec FixForBug does not match any
+"""
+
+this problem can be solved by forced pushing where the command is 
+    command - git push -f origin main
+
+
