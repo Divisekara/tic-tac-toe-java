@@ -40,6 +40,9 @@ error: src refspec FixForBug does not match any
 """
 
 this problem can be solved by forced pushing where the command is 
-    command - git push -f origin main
+    command - git push -f origin main // f - flag stands for forced.
+
+then we can keep pushing using the following code
+    command - git push -u origin main
 
 

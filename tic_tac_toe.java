@@ -80,8 +80,19 @@ public class tic_tac_toe {
             column = (j % 3) * 2;
             boardNumbers[row][column] = String.valueOf(board[row][column]);
         }
+
+        for (int k = 0; k < 3; k++) {
+            String[] pattern = new String[3];
+
+            pattern = boardNumbers[0];
+            pattern = boardNumbers[1];
+            pattern = boardNumbers[2];
+
+        }
+
     }
 
+    // check the 3x1 patterns whther we have a winner or we need to continue playing
     public static String checkPattern(String[] pattern) {
         int number_X = 0;
         int number_O = 0;
@@ -93,9 +104,9 @@ public class tic_tac_toe {
             }
         }
 
-        if (number_O == 3) {
+        if (number_X == 3) {
             return "X";
-        } else if (number_X == 3) {
+        } else if (number_O == 3) {
             return "O";
         } else {
             return "play";
